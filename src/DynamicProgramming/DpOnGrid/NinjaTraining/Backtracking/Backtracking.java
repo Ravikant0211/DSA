@@ -2,6 +2,7 @@ package DynamicProgramming.DpOnGrid.NinjaTraining.Backtracking;
 
 import java.util.Scanner;
 
+// PROBLEM LINK = 'https://www.naukri.com/code360/problems/ninja-s-training_3621003?leftPanelTabValue=PROBLEM'
 public class Backtracking {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
