@@ -1,4 +1,4 @@
-package sortingAlgorithms.selectionSort;
+package SortingAlgorithms.selectionSort;
 
 import java.util.*;
 

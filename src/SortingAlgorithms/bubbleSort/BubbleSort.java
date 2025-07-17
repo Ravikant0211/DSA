@@ -1,4 +1,4 @@
-package sortingAlgorithms.bubbleSort;
+package SortingAlgorithms.bubbleSort;
 
 import java.util.*;
 public class BubbleSort {
