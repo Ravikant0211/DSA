@@ -8,27 +8,19 @@ public class CountDigits {
          int n = sc.nextInt();
 
          int ans = countDigits(n);
+
          System.out.println("Answer:" + ans);
     }
 
     public static int countDigits(int n) {
-        int count = 0; // 4
-        while(n > 0) { // 0 > 0 => false
-            n = n / 10; //
-            count = count + 1; // 3 + 1 = 4
+        int count = 0;
+        while(n > 0) {
+            n = n / 10;
+            count = count + 1;
         }
         return count;
     }
 }
-
-// *****
-// *****
-// *****
-// *****
-// *****
-// *****
-// *****
-// *****
 
 // 4357
 
