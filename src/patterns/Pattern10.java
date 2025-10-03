@@ -3,6 +3,8 @@ package patterns;
 import java.lang.Math;
 
 public class Pattern10 {
+    // TC: O(N^2)
+    // SC: O(1)
     public static void main(String[] args) {
         int n = 6;
         for (int i = 1; i <= 2*n - 1; i++) {
@@ -19,8 +21,39 @@ public class Pattern10 {
     }
 }
 
-// i = 1, j = 1, 2, 3, 4, 5
+// Time complexity = O(2 ^ n) => exponential time complexity
+// n = 5 => 32
+// n = 10 => 1024
+
+// Time complexity = O(N^3) => n qube time complexity
+// 7 * 7 * 7 = 343
+// 10 * 10 * 10 = 1000
+
+// Time complexity = O((2n - 1) * (2n - 1)) = O(n^2) => n square time complexity
+// 11 * 11 = 121
+// 15 * 15 = 225
+// 16 * 16 = 256
+// 20 * 20 = 400
+
+// Time complexity = O(N)
+// 10 = 10
+// 50 = 50
+// 60 = 60
+
+// Time complexity = O(log N)
+// N = 10, log 10 => around 2-3
+
+// O(2 ^ n) > O(n ^ 3) > O(n ^ 2) > O(n) > O(log n) > O(1);
+
+
+
+// 11, 11, 11, ......., 11 times
+// 11 + 11 + 11 ..... 11 times = 11 * 11 = 121
+
+// i = 1, j = 1, 2, 3, 4, 5, 6, 7, 8,
 // i = 2, j = 1, 2, 3, 4, 5
+// i = 3, j = 1, 2, 3, 4, 5
+// i =
 
 
 
