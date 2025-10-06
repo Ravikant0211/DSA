@@ -1,31 +1,74 @@
 package Hashing;
 
+import java.util.HashMap;
+import java.util.Map;
+
+// https://www.geeksforgeeks.org/problems/key-pair5616/1
+// https://www.geeksforgeeks.org/problems/union-of-two-arrays3538/1
+// https://www.geeksforgeeks.org/problems/array-subset-of-another-array2317/1
+
 public class Basic {
-    // Time complexity: O(n * m), square time complexity
-    // Space complexity: O(1), Constant space complexity
+    // Time complexity: O(m + n), Linear time complexity
+    // Space complexity: O(m), Linear space complexity
 
     public static void main(String[] args) {
-                    //0  1  2  3  4  5  6  7  8  9  10 11 12
-        int[] arr = { 1, 2, 2, 3, 2, 1, 2, 1, 3, 4, 4, 2, 1 }; // length -> m
-        int[] Q = { 1, 3, 4, 2, 10, 1, 1, 1, 1, 1, 4, 4, 2 }; // length -> n
+        // 0  1  2  3  4  5  6  7  8  9  10 11 12
+        int[] arr = { 1, 2, 2, 3, 2, 1, 2, 1, 3, 4, 4, 2, 1, 3 , 4, 5, 7, 9,  }; // length -> m
+        int[] Q = { 1, 3, 4, 2, 1, 1, 1, 4, 4, 2 }; // length -> n
 
-        for (int i = 0; i < Q.length; i++) {
-            int count = countElements(arr, Q[i]);
-            System.out.println(count);
-        }
-    }
+        Map<Integer, Integer> map = new HashMap<>(); // O(M), Linear space complexity
+        // { 1=4, 2=5, 3=2, 4=2 }
+        //  key         value
+        //   1            4
+        //   2            5
+        //   3            2
+        //   4            2
 
-    public static int countElements (int[] arr, int q) {
-        int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            // agar ith index pe 1 hai to count badhado
-            if (arr[i] == q) {
-                count = count + 1;
+        for(int i = 0; i < arr.length; i++) { // O(m)
+            int key = arr[i]; // 2
+            // If we have a value associated to key, then we will retrieve it from the hashmap,
+            // and increase it by 1 and put it back in the hashmap
+            if (map.containsKey(key)) {
+                int value = map.get(key); // 3
+                map.put(key, value + 1); // map.put(2, 4)
+            } else { // If we don't have, we will be putting (key, 1) in the hashmap.
+                map.put(key, 1); // map.put(2, 1)
             }
         }
-        return count;
+
+        for (int j = 0; j < Q.length; j++) { // O(n)
+            int frequency = map.get(Q[j]); // O(1)
+            System.out.println(frequency);
+        }
     }
 }
+
+//public class Basic {
+//    // Time complexity: O(n * m), square time complexity
+//    // Space complexity: O(1), Constant space complexity
+//
+//    public static void main(String[] args) {
+//                    //0  1  2  3  4  5  6  7  8  9  10 11 12
+//        int[] arr = { 1, 2, 2, 3, 2, 1, 2, 1, 3, 4, 4, 2, 1 }; // length -> m
+//        int[] Q = { 1, 3, 4, 2, 10, 1, 1, 1, 1, 1, 4, 4, 2 }; // length -> n
+//
+//        for (int i = 0; i < Q.length; i++) {
+//            int count = countElements(arr, Q[i]);
+//            System.out.println(count);
+//        }
+//    }
+//
+//    public static int countElements (int[] arr, int q) {
+//        int count = 0;
+//        for (int i = 0; i < arr.length; i++) {
+//            // agar ith index pe 1 hai to count badhado
+//            if (arr[i] == q) {
+//                count = count + 1;
+//            }
+//        }
+//        return count;
+//    }
+//}
 
 // Questions 1: Given an array of integers: [1, 2, 1, 3, 2] find the number of times 1 appear.
 
@@ -47,14 +90,8 @@ public class Basic {
 // map.size() // Give the size of the Map
 // map.isEmpty() // Tells if the map is empty (true/false)
 
-
-
 // key value
-//  1    5
-//  2    4
-//  3    2
-//  4    2
-// 10    0
+
 
 // hash.get(4) = 2
 // hash.get(3) = 2
