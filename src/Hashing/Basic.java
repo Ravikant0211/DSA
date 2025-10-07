@@ -90,8 +90,5 @@ public class Basic {
 // map.size() // Give the size of the Map
 // map.isEmpty() // Tells if the map is empty (true/false)
 
-// key value
-
-
 // hash.get(4) = 2
 // hash.get(3) = 2
