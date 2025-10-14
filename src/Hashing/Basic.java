@@ -53,7 +53,7 @@ public class Basic {
 //        int[] Q = { 1, 3, 4, 2, 10, 1, 1, 1, 1, 1, 4, 4, 2 }; // length -> n
 //
 //        for (int i = 0; i < Q.length; i++) {
-//            int count = countElements(arr, Q[i]);
+//            int count = countElements(arr,Q[i]);
 //            System.out.println(count);
 //        }
 //    }
